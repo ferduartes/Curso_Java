@@ -1,15 +1,27 @@
 package bytebank_herdado;
+//nao pode instanciar essa classe, porque e abstrata
+public abstract class Funcionario {
 
-public class Funcionario {
+	private int senha;
+
+	public void setSenha(int senha) {
+		this.senha = senha;
+	}
+
+	public boolean autentica(int senha) {
+		if(this.senha == senha) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 	private String nome;
 	private String cpf;
 	private double salario;
 	
 	
-	public double getBonificacao() {
-		return this.salario * 0.5;
-	}
+	public abstract double getBonificacao();
 	
 	public String getNome() {
 		return nome;
